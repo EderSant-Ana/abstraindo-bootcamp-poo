@@ -7,63 +7,67 @@ import java.util.Objects;
 import java.util.Set;
 
 public class Bootcamp {
-    private String nome;
-    private String descricao;
-    private final LocalDate dataInicial = LocalDate.now();
-    private final LocalDate dataFinal = dataInicial.plusDays(45);
-    private Set<Aluno> alunoInscritos = new HashSet<>();
-    private Set<Conteudo> conteudos = new LinkedHashSet<>();
+	private String nome;
+	private String descricao;
+	private final LocalDate dataInicial = LocalDate.now();
+	private final LocalDate dataFinal = dataInicial.plusDays(45);
+	private Set<Dev> devInscritos = new HashSet<>();
+	private Set<Conteudo> conteudos = new LinkedHashSet<>();
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Bootcamp bootcamp = (Bootcamp) o;
-        return Objects.equals(nome, bootcamp.nome) && Objects.equals(descricao, bootcamp.descricao) && Objects.equals(dataInicial, bootcamp.dataInicial) && Objects.equals(dataFinal, bootcamp.dataFinal) && Objects.equals(alunoInscritos, bootcamp.alunoInscritos) && Objects.equals(conteudos, bootcamp.conteudos);
-    }
+	@Override
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
+		Bootcamp bootcamp = (Bootcamp) o;
+		return Objects.equals(nome, bootcamp.nome) && Objects.equals(descricao, bootcamp.descricao)
+				&& Objects.equals(dataInicial, bootcamp.dataInicial) && Objects.equals(dataFinal, bootcamp.dataFinal)
+				&& Objects.equals(devInscritos, bootcamp.devInscritos) && Objects.equals(conteudos, bootcamp.conteudos);
+	}
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(nome, descricao, dataInicial, dataFinal, alunoInscritos, conteudos);
-    }
+	@Override
+	public int hashCode() {
+		return Objects.hash(nome, descricao, dataInicial, dataFinal, devInscritos, conteudos);
+	}
 
-    public String getNome() {
-        return nome;
-    }
+	public String getNome() {
+		return nome;
+	}
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-    public String getDescricao() {
-        return descricao;
-    }
+	public String getDescricao() {
+		return descricao;
+	}
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
 
-    public LocalDate getDataInicial() {
-        return dataInicial;
-    }
+	public LocalDate getDataInicial() {
+		return dataInicial;
+	}
 
-    public LocalDate getDataFinal() {
-        return dataFinal;
-    }
+	public LocalDate getDataFinal() {
+		return dataFinal;
+	}
 
-    public Set<Aluno> getAlunoInscritos() {
-        return alunoInscritos;
-    }
+	public Set<Dev> getDevInscritos() {
+		return devInscritos;
+	}
 
-    public void setAlunoInscritos(Set<Aluno> alunoInscritos) {
-        this.alunoInscritos = alunoInscritos;
-    }
+	public void setAlunoInscritos(Set<Dev> devInscritos) {
+		this.devInscritos = devInscritos;
+	}
 
-    public Set<Conteudo> getConteudos() {
-        return conteudos;
-    }
+	public Set<Conteudo> getConteudos() {
+		return conteudos;
+	}
 
-    public void setConteudos(Set<Conteudo> conteudos) {
-        this.conteudos = conteudos;
-    }
+	public void setConteudos(Set<Conteudo> conteudos) {
+		this.conteudos = conteudos;
+	}
 }
